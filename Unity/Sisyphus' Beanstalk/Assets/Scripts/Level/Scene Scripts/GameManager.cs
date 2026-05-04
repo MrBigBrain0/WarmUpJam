@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject platformPrefab;
 
-    public float platformCount = 10;
+    public float platformCount = 1;
 
     private void Start()
     {

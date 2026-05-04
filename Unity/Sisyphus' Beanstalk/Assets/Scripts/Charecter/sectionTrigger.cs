@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEditor;
 using UnityEngine;
 
 public class sectionTrigger : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public GameObject platformSection;
+    public GameObject player;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void OnTriggerEnter2D()
+    {    
+        Debug.Log("ASHHHHH");
+
+        Instantiate(platformSection, new Vector3(0, 13, 0), Quaternion.identity);
     }
 }
