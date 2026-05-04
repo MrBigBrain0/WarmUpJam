@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5442b05f93eb738439f02930cff67077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  target: {fileID: 266534868}
+  target: {fileID: 1851305406}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,6 +858,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b344772b1c4695d4bb8477c1ac11e2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  platformPrefab: {fileID: 3523086998850091074, guid: cac8f8fe7c6ee874680d155426ab8990, type: 3}
+  platformCount: 300
 --- !u!4 &2120979876
 Transform:
   m_ObjectHideFlags: 0
