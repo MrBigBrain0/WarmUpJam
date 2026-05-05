@@ -226,16 +226,16 @@ RectTransform:
   m_GameObject: {fileID: 418872430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6461704, y: 2.3610039, z: 1.1945}
+  m_LocalScale: {x: 2.7374167, y: 3.9261134, z: 1.986334}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1645757926}
   m_Father: {fileID: 1735428378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -314, y: -204}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0.06814585, y: 0.102814816}
+  m_AnchorMax: {x: 0.30064586, y: 0.21300001}
+  m_AnchoredPosition: {x: -0.5, y: -2.5}
+  m_SizeDelta: {x: -287, y: -89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418872432
 MonoBehaviour:
@@ -416,7 +416,7 @@ RectTransform:
   m_GameObject: {fileID: 983531573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8652923, y: 2.6752775, z: 1.3535}
+  m_LocalScale: {x: 1.2356817, y: 1.6719414, z: 1.3535}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1493143440}
@@ -424,7 +424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.04026268, y: 0.2743085}
   m_AnchorMax: {x: 0.32900003, y: 0.40346202}
-  m_AnchoredPosition: {x: 0, y: -1}
+  m_AnchoredPosition: {x: -10, y: -1}
   m_SizeDelta: {x: -132, y: -50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &983531575
@@ -640,7 +640,7 @@ RectTransform:
   m_GameObject: {fileID: 1493143439}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2140626, y: 1, z: 1}
+  m_LocalScale: {x: 1.0101486, y: 0.83204, z: 0.83204}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 983531574}
@@ -697,8 +697,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 51.73
+  m_fontSizeBase: 51.73
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
