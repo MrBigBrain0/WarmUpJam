@@ -4,6 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class Death_Condition : MonoBehaviour
 {
+    
+    
+
+    private void FixedUpdate()
+    {
+        transform.position = Vector2.up * Time.deltaTime;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
