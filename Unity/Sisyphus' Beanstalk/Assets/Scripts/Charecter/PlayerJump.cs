@@ -15,21 +15,29 @@ public class PlayerJump : MonoBehaviour
     public float jumpDistanceRate;
     public int  jumpHeightMax = 10;
 
-
-
     public Rigidbody2D rb;
 
     public Animator animator;
+    private bool isFacingRight;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        isFacingRight = true;
     }
 
     private void Update()
     {
         jumping();
+        if(!isFacingRight && transform.position.x < 0)
+        {
+            Flip();
+        }
+        else if(isFacingRight && transform.position.x > 0)
+        {
+            Flip();
+        }
     }
 
 
@@ -96,5 +104,11 @@ public class PlayerJump : MonoBehaviour
         }
     }
 
-
+    public void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
+    }
 }
