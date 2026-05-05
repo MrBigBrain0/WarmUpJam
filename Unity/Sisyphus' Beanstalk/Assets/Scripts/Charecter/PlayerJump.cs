@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerJump : MonoBehaviour
 {
 
-//  for the 
+//  for the jump force
     public float jumpForce;
     public int jumpForceChargeRate;
     public int jumpForceMaxCharge = 10;
@@ -18,16 +18,26 @@ public class PlayerJump : MonoBehaviour
     public Rigidbody2D rb;
 
     public Animator animator;
+    private bool isFacingRight;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        isFacingRight = true;
     }
 
     private void Update()
     {
         jumping();
+        if(!isFacingRight && transform.position.x < 0)
+        {
+            Flip();
+        }
+        else if(isFacingRight && transform.position.x > 0)
+        {
+            Flip();
+        }
     }
 
 
@@ -57,7 +67,8 @@ public class PlayerJump : MonoBehaviour
             }
 
 
-           // Debug.Log("charging");
+
+            // Debug.Log("charging");
 
         }
         else
@@ -65,8 +76,14 @@ public class PlayerJump : MonoBehaviour
             animator.SetBool("Spacebar", false);
         }
 
-        // checks to see which side the player is on to know what direction to go towards
-        if (transform.position.x > 0)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/charging", transform.position);
+        }
+
+            // checks to see which side the player is on to know what direction to go towards
+            if (transform.position.x > 0)
         {
             side = new Vector2(-1, 0);
         }
@@ -83,6 +100,15 @@ public class PlayerJump : MonoBehaviour
             jumpForce = 0;
             jumpDistance = 0;
             Debug.Log("jumping");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/jump", transform.position);
         }
+    }
+
+    public void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 }
