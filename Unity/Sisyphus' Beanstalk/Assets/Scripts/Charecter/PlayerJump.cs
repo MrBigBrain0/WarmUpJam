@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerJump : MonoBehaviour
 {
 
-//  for the 
+//  for the jump force
     public float jumpForce;
     public int jumpForceChargeRate;
     public int jumpForceMaxCharge = 10;
@@ -14,6 +14,8 @@ public class PlayerJump : MonoBehaviour
     public float jumpDistance;
     public float jumpDistanceRate;
     public int  jumpHeightMax = 10;
+
+
 
     public Rigidbody2D rb;
 
@@ -53,12 +55,19 @@ public class PlayerJump : MonoBehaviour
             }
 
 
-           // Debug.Log("charging");
+
+            // Debug.Log("charging");
 
         }
 
-        // checks to see which side the player is on to know what direction to go towards
-        if (transform.position.x > 0)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/charging", transform.position);
+        }
+
+            // checks to see which side the player is on to know what direction to go towards
+            if (transform.position.x > 0)
         {
             side = new Vector2(-1, 0);
         }
@@ -75,6 +84,9 @@ public class PlayerJump : MonoBehaviour
             jumpForce = 0;
             jumpDistance = 0;
             Debug.Log("jumping");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/jump", transform.position);
         }
     }
+
+
 }
