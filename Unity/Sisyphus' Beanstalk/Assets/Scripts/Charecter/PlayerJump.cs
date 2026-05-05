@@ -17,9 +17,12 @@ public class PlayerJump : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    public Animator animator;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -34,9 +37,10 @@ public class PlayerJump : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            // if W is held down, the jump force is charging up
+            // if Space is held down, the jump force is charging up
             jumpForce += jumpForceChargeRate * Time.deltaTime;
             jumpDistance += jumpForceChargeRate * Time.deltaTime;
+            animator.SetBool("Spacebar", true); 
 
             // sets the jump force to be limited to max distance
             if (jumpForce > jumpForceMaxCharge)
@@ -55,6 +59,10 @@ public class PlayerJump : MonoBehaviour
 
            // Debug.Log("charging");
 
+        }
+        else
+        {
+            animator.SetBool("Spacebar", false);
         }
 
         // checks to see which side the player is on to know what direction to go towards
