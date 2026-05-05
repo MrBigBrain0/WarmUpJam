@@ -8,12 +8,21 @@ public class sectionTrigger : MonoBehaviour
 {
     public Transform platformSection;
     public Transform platformTriggerSpawn;
-    public Transform triggerSpawn;
+    public Transform spawnPlatformPosition;
+
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        platformTriggerSpawn = Instantiate(platformSection, triggerSpawn.transform.position, Quaternion.identity);
+        // if the player reaches this trigger is spawns the next platform prefab above before the player can see it
 
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Instantiate(platformSection, spawnPlatformPosition.transform.position, Quaternion.identity);
+
+        }
+        
+        
     }
+
 }
