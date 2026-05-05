@@ -4,15 +4,16 @@ using UnityEngine;
 public class PlayerJump : MonoBehaviour
 {
 
+//  for the 
     public float jumpForce;
-    public int jumpForceChargeRate = 2;
-    public int jumpForceMaxCharge = 7;
+    public int jumpForceChargeRate;
+    public int jumpForceMaxCharge = 10;
 
 
-
+//  for the vertical jumping distance
     public float jumpDistance;
-    public float jumpDistanceRate = 2;
-    public int  jumpHeightMax = 7;
+    public float jumpDistanceRate;
+    public int  jumpHeightMax = 10;
 
     public Rigidbody2D rb;
 
@@ -31,25 +32,28 @@ public class PlayerJump : MonoBehaviour
     {
         Vector2 side = Vector2.zero;
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.Space))
         {
             // if W is held down, the jump force is charging up
             jumpForce += jumpForceChargeRate * Time.deltaTime;
             jumpDistance += jumpForceChargeRate * Time.deltaTime;
 
+            // sets the jump force to be limited to max distance
             if (jumpForce > jumpForceMaxCharge)
             {
                 jumpForce = jumpForceMaxCharge;
+                Debug.Log("jump force max");
             }
 
-            // sets the 
+            // sets the jump height to be limited to max force
             if (jumpDistance > jumpHeightMax)
             {
                 jumpDistance = jumpHeightMax;
+                Debug.Log("jump height max");
             }
 
 
-            Debug.Log("charging");
+           // Debug.Log("charging");
 
         }
 
@@ -63,7 +67,7 @@ public class PlayerJump : MonoBehaviour
             side = new Vector2(1f,0);
         }
 
-        if (Input.GetKeyUp(KeyCode.W))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             // if W is released, thje player jumps to either side * the force they charged up
 
