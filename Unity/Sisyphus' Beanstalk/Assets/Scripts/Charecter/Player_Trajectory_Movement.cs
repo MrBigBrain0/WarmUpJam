@@ -33,4 +33,5 @@ public class Player_Trajectory_Movement : MonoBehaviour
             rb.linearVelocity = jumpVelocity;
         }
     }
+
 }
