@@ -1008,6 +1008,7 @@ GameObject:
   - component: {fileID: 1990533518}
   - component: {fileID: 1990533517}
   - component: {fileID: 1990533521}
+  - component: {fileID: 1990533522}
   m_Layer: 0
   m_Name: Jumping Spidor_0
   m_TagString: Player
@@ -1115,7 +1116,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.03, y: 3.45}
+    oldSize: {x: 2.48, y: 3.4}
     newSize: {x: 7.88, y: 6.49}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1204,6 +1205,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1990533522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990533515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1bfa4a408194934bb2532a68923b80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player_Anim_Manager
+  rb: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &2086277437
 GameObject:
   m_ObjectHideFlags: 0
