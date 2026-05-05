@@ -6,30 +6,14 @@ using UnityEngine;
 
 public class sectionTrigger : MonoBehaviour
 {
-   
-    [SerializeField] private Transform levelSectionStart;
-    [SerializeField] private Transform levelSection;
+    public Transform platformSection;
+    public Transform platformTriggerSpawn;
+    public Transform triggerSpawn;
 
-    private void Awake()
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-// to spawn the next section
-        Transform lastLevelSectionTransform;
-        lastLevelSectionTransform = SpawnLevelSection(levelSectionStart.Find("EndPosition").position);
-        lastLevelSectionTransform = SpawnLevelSection(lastLevelSectionTransform.Find("EndPosition").position);
-        lastLevelSectionTransform = SpawnLevelSection(lastLevelSectionTransform.Find("EndPosition").position);
-        lastLevelSectionTransform = SpawnLevelSection(lastLevelSectionTransform.Find("EndPosition").position);
-        lastLevelSectionTransform = SpawnLevelSection(lastLevelSectionTransform.Find("EndPosition").position);
-        lastLevelSectionTransform = SpawnLevelSection(lastLevelSectionTransform.Find("EndPosition").position);
+        platformTriggerSpawn = Instantiate(platformSection, triggerSpawn.transform.position, Quaternion.identity);
 
     }
-    
-    private Transform SpawnLevelSection(Vector3 spawnPosition)
-    {
-        // Instantiates the sections to spawn, spawnPosition is set in the method: Awake
-        Transform levelPartTransform = Instantiate(levelSection, spawnPosition, Quaternion.identity);
-        return levelPartTransform;
-       
-       
-    }
-
 }
