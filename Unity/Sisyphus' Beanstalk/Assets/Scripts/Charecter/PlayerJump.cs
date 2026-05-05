@@ -4,9 +4,15 @@ using UnityEngine;
 public class PlayerJump : MonoBehaviour
 {
 
-    public float force;
-    public int chargeBuildUp = 1;
+    public float jumpForce;
+    public int jumpForceChargeRate = 2;
+    public int jumpForceMaxCharge = 7;
+
+
+
     public float jumpDistance;
+    public float jumpDistanceRate = 2;
+    public int  jumpHeightMax = 7;
 
     public Rigidbody2D rb;
 
@@ -28,8 +34,21 @@ public class PlayerJump : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             // if W is held down, the jump force is charging up
-            force += chargeBuildUp * Time.deltaTime;
-            jumpDistance += chargeBuildUp * Time.deltaTime;
+            jumpForce += jumpForceChargeRate * Time.deltaTime;
+            jumpDistance += jumpForceChargeRate * Time.deltaTime;
+
+            if (jumpForce > jumpForceMaxCharge)
+            {
+                jumpForce = jumpForceMaxCharge;
+            }
+
+            // sets the 
+            if (jumpDistance > jumpHeightMax)
+            {
+                jumpDistance = jumpHeightMax;
+            }
+
+
             Debug.Log("charging");
 
         }
@@ -48,8 +67,8 @@ public class PlayerJump : MonoBehaviour
         {
             // if W is released, thje player jumps to either side * the force they charged up
 
-            rb.linearVelocity = new Vector2(side.x * jumpDistance, force * jumpDistance);
-            force = 0;
+            rb.linearVelocity = new Vector2(side.x * jumpDistance, jumpForce);
+            jumpForce = 0;
             jumpDistance = 0;
             Debug.Log("jumping");
         }
